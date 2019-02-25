@@ -1,0 +1,69 @@
+SELECT count(distinct(country))FROM`bigquery-public-data.noaa_significant_earthquakes.earthquakes`
+https://docs.google.com/spreadsheets/d/1viH-tes9r6_GBCJg64YmJqN8SAgWVi0_T6uDhPm6n-o/edit#gid=1787108923
+
+SELECT COUNT(DISTINCT(id)) as Number_of_Earthquakes,STRING_AGG(DISTINCT(country)) 
+FROM`bigquery-public-data.noaa_significant_earthquakes.earthquakes`
+where country="INDIA"
+https://docs.google.com/spreadsheets/d/1viH-tes9r6_GBCJg64YmJqN8SAgWVi0_T6uDhPm6n-o/edit#gid=1382487135
+
+SELECT * FROM`bigquery-public-data.noaa_significant_earthquakes.earthquakes`
+Where country="CANADA"
+https://docs.google.com/spreadsheets/d/1viH-tes9r6_GBCJg64YmJqN8SAgWVi0_T6uDhPm6n-o/edit#gid=1841782052
+
+SELECT COUNT ((id)) as Number_of_Earthquakes,STRING_AGG(DISTINCT(country)) 
+FROM`bigquery-public-data.noaa_significant_earthquakes.earthquakes`
+https://docs.google.com/spreadsheets/d/1viH-tes9r6_GBCJg64YmJqN8SAgWVi0_T6uDhPm6n-o/edit#gid=809654663
+
+SELECT   eq_primary as Number_of_Earthquakes 
+  ,COUNT(DISTINCT(id)) as Earthquake_Magnitude
+  ,STRING_AGG(DISTINCT(country)) as Countries
+FROM `bigquery-public-data.noaa_significant_earthquakes.earthquakes`
+GROUP BY eq_primary
+ORDER BY 1 desc
+LIMIT 1
+https://docs.google.com/spreadsheets/d/1viH-tes9r6_GBCJg64YmJqN8SAgWVi0_T6uDhPm6n-o/edit#gid=1880289239
+
+SELECT  eq_primary as Earthquake_Magnitude ,COUNT(DISTINCT(id)) as Number_of_Earthquakes,STRING_AGG(DISTINCT(country)) as Countries
+FROM `bigquery-public-data.noaa_significant_earthquakes.earthquakes`
+GROUP BY eq_primary
+ORDER BY 1 desc
+LIMIT 10
+https://docs.google.com/spreadsheets/d/1viH-tes9r6_GBCJg64YmJqN8SAgWVi0_T6uDhPm6n-o/edit#gid=521728684
+
+SELECT
+year
+,country
+,Location_name
+,total_deaths
+FROM `bigquery-public-data.noaa_significant_earthquakes.earthquakes`
+where country = "INDIA"
+ORDER BY year desc
+https://docs.google.com/spreadsheets/d/1viH-tes9r6_GBCJg64YmJqN8SAgWVi0_T6uDhPm6n-o/edit#gid=1832270799
+
+SELECT  eq_primary as Earthquake_Magnitude ,COUNT(DISTINCT(id)) as Number_of_Earthquakes,STRING_AGG(DISTINCT(country)) as Countries
+FROM `bigquery-public-data.noaa_significant_earthquakes.earthquakes`
+GROUP BY eq_primary
+ORDER BY 1 asc
+LIMIT 5
+https://docs.google.com/spreadsheets/d/1viH-tes9r6_GBCJg64YmJqN8SAgWVi0_T6uDhPm6n-o/edit#gid=745244197
+
+SELECT 
+  year
+  ,country
+  ,location_name
+  ,total_deaths
+FROM `bigquery-public-data.noaa_significant_earthquakes.earthquakes`
+ORDER BY year desc
+LIMIT 10
+https://docs.google.com/spreadsheets/d/1viH-tes9r6_GBCJg64YmJqN8SAgWVi0_T6uDhPm6n-o/edit#gid=563571325
+
+SELECT 
+  year
+  ,country
+  ,location_name
+FROM `bigquery-public-data.noaa_significant_earthquakes.earthquakes`
+ORDER BY year
+LIMIT 10
+https://docs.google.com/spreadsheets/d/1viH-tes9r6_GBCJg64YmJqN8SAgWVi0_T6uDhPm6n-o/edit#gid=2101094771
+
+
